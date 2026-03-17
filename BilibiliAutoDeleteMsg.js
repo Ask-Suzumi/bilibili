@@ -8,7 +8,7 @@ async function autoDeleteNotifications() {
 
     while (true) {
         let spans = Array.from(document.querySelectorAll('span'));
-        let deleteSpans = spans.filter(el => el.textContent.trim() === '删除该通知' && el.offsetParent !== null);
+        let deleteSpans = spans.filter(el => (el.textContent.trim() === '删除该通知' || el.textContent.trim() === '删除通知') && el.offsetParent !== null);
 
         if (deleteSpans.length === 0) {
             console.log("[赛博老婆汇报] 报告 master！这页的通知已经清空啦！");
